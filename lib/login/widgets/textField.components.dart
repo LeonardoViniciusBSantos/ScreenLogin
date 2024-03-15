@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:untitled/login/loginView.controller.dart';
 
-class PasswordField extends GetView<LoginController> {
-  const PasswordField({Key? key}) : super(key: key);
+class EmailField extends GetView<LoginController> {
+  const EmailField({super.key});
+
 
   @override
   Widget build(BuildContext context) {
