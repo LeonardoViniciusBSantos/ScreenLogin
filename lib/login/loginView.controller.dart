@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:untitled/home/home.view.dart';
-import 'package:untitled/models/user.model.dart';
+import 'package:screen_login/home/home.view.dart';
+import 'package:screen_login/models/user.model.dart';
 
 class LoginController extends GetxController {
   TextEditingController emailInput = TextEditingController();
@@ -11,13 +11,20 @@ class LoginController extends GetxController {
 
   final RxList<User> userList = RxList();
 
-
+@override
   void onInit() {
     super.onInit();
 
     userList.add(User('fulano@gmail.com', '123'));
     userList.add(User('ciclano@gmail.com', '456'));
     userList.add(User('leo@gmail.com', '789'));
+  }
+
+  @override
+  void onClose() {
+    emailInput.dispose();
+    passwordInput.dispose();
+    super.onClose();
   }
 
   void tryToLogin() {

@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:untitled/login/loginView.controller.dart';
 
-class EmailField extends GetView<LoginController> {
-  const EmailField({super.key});
+import '../loginView.controller.dart';
+
+class TextInputField extends StatelessWidget {
+
+
+  final TextEditingController? controller;
+  final String hintText;
+  final bool obscureText;
+
+  const TextInputField({
+    super.key,
+    required this.controller,
+    required this.hintText,
+    required this.obscureText,
+  });
 
 
   @override
@@ -11,15 +22,16 @@ class EmailField extends GetView<LoginController> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25),
       child: TextField(
-        controller: controller.emailInput,
-        decoration: const InputDecoration(
-          hintText: 'Digite seu email',
-          enabledBorder: OutlineInputBorder(
+        controller: controller,
+        obscureText: obscureText,
+        decoration: InputDecoration(
+          hintText: hintText,
+          enabledBorder: const OutlineInputBorder(
             borderSide: BorderSide(
               color: Colors.white,
             ),
           ),
-          focusedBorder: OutlineInputBorder(
+          focusedBorder: const OutlineInputBorder(
             borderSide: BorderSide(
               color: Colors.grey,
             ),
@@ -31,3 +43,4 @@ class EmailField extends GetView<LoginController> {
     );
   }
 }
+

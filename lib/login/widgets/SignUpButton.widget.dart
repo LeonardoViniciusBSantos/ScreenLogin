@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:untitled/login/loginView.controller.dart';
+import 'package:screen_login/login/loginView.controller.dart';
 
 class SignUpButton extends GetView<LoginController> {
   const SignUpButton({Key? key}) : super(key: key);

@@ -1,29 +1,34 @@
 import 'package:flutter/material.dart';
 
 Widget TextDivider( ){
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-      Expanded(
-        child: Divider(
-          color: Colors.white, // Cor branca
-        ),
-      ), // Traço à esquerda
-      Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-        child: Text(
-          'Entre com',
-          style: TextStyle(
-            fontSize: 16.0,
-            color: Colors.white, // Cor branca
+  return Padding(
+    padding: EdgeInsets.symmetric(horizontal: 25),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Expanded(
+          child: Divider(
+            thickness: 0.5,
+            color: Colors.grey[400],
           ),
         ),
-      ),
-      Expanded(
-        child: Divider(
-          color: Colors.white, // Cor branca
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10.0),
+          child: Text(
+            'Ou continue com',
+            style: TextStyle(
+              fontSize: 16.0,
+              color: Colors.grey[700], // Cor branca
+            ),
+          ),
         ),
-      ), // Traço à direita
-    ],
+        Expanded(
+          child: Divider(
+            thickness: 0.5,
+            color: Colors.grey[400], // Cor branca
+          ),
+        ),
+      ],
+    ),
   );
 }
