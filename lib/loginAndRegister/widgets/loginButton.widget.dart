@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-import '../loginView.controller.dart';
-
-class LoginButton extends GetView<LoginController> {
+class LoginButton extends StatelessWidget {
   final Function() onTap;
+  final String text;
 
-  LoginButton({super.key, required this.onTap});
+  LoginButton({super.key, required this.onTap, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +17,9 @@ class LoginButton extends GetView<LoginController> {
           color: Colors.black,
           borderRadius: BorderRadius.circular(5),
         ),
-        child: const Center(
+        child: Center(
           child: Text(
-            'Entrar',
+            text,
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,

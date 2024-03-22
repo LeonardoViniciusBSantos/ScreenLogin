@@ -1,8 +1,13 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
+
+  void signUserOut() {
+    FirebaseAuth.instance.signOut();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -10,10 +15,9 @@ class HomeView extends StatelessWidget {
       appBar: AppBar(title: const Text('HomePage'),
         leading: const Icon(Icons.person),
         actions: [
-          IconButton(onPressed: (){
-            Get.back();
-          },
-          icon: const Icon(Icons.logout),
+          IconButton(
+            onPressed: signUserOut,
+            icon: const Icon(Icons.logout),
           ),
         ],
       ),

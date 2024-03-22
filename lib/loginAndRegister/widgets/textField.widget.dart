@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../loginView.controller.dart';
-
 class TextInputField extends StatelessWidget {
 
 
