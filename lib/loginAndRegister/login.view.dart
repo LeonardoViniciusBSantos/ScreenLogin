@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:screen_login/services/auth_service.dart';
 import 'widgets/loginButton.widget.dart';
 import 'widgets/squireTile.dart';
 import 'widgets/textDivider.widget.dart';
@@ -161,16 +162,18 @@ class _LoginViewState extends State<LoginView> {
                 SizedBox(
                   height: 50,
                 ),
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SquiteTile(
+                      onTap: () => AuthService().signInWithGoogle(),
                       imagePath: 'assets/icons/google.png',
                     ),
                     SizedBox(
                       width: 10,
                     ),
                     SquiteTile(
+                      onTap: () {},
                       imagePath: 'assets/icons/apple.png',
                     )
                   ],
